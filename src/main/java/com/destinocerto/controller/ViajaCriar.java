@@ -18,21 +18,15 @@ import com.destinocerto.model.Usuario;
 import com.destinocerto.model.Viaja;
 
 @WebServlet("/VCriarEPesquisar")
-public class ViajaCriarEPesquisar extends HttpServlet {
+public class ViajaCriar extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public ViajaCriarEPesquisar() {
+	public ViajaCriar() {
 		super();
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-		String pesquisa = request.getParameter("pesquisa");
-
-		if (pesquisa == null) {
-			pesquisa = "";
-		}
 
 		List<Destino> destinos = DestinoDAO.pesquisar();
 		List<Usuario> usuarios = UsuarioDAO.pesquisar();
@@ -61,6 +55,7 @@ public class ViajaCriarEPesquisar extends HttpServlet {
 
 		System.out.println(request.getParameter("transporte"));
 		
+		
 		Viaja viaja = new Viaja();
 
 		Usuario usuario = UsuarioDAO.acharPorId(Integer.parseInt(request.getParameter("idUsuario")));
@@ -69,6 +64,7 @@ public class ViajaCriarEPesquisar extends HttpServlet {
 		viaja.setDataPartida(request.getParameter("dataPartida"));
 		viaja.setDataRetorno(request.getParameter("dataRetorno"));
 		viaja.setTransporte(request.getParameter("transporte"));
+		viaja.setDestinoU(destino.getDescricao());
 		viaja.setUsuario(usuario);
 		viaja.setDestino(destino);
 
@@ -76,8 +72,6 @@ public class ViajaCriarEPesquisar extends HttpServlet {
 
 		RequestDispatcher despacho = request.getRequestDispatcher("index.jsp");
 		despacho.forward(request, response);
-
-		// doGet(request, response);
 	}
 
 }

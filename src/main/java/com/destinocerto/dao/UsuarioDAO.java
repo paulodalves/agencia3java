@@ -19,20 +19,21 @@ public class UsuarioDAO {
 
 	public static void criar(Usuario usuario) {
 
-		sql = "INSERT INTO usuario (idUsuario, nome, cpf, sexo, dataNascimento, telefone, email, senha) VALUES"
-				+ "(null, ?, ?, ?, ?, ?, ?, ?)";
+		sql = "INSERT INTO usuario (idUsuario, nome, sobrenome, cpf, sexo, dataNascimento, telefone, email, senha) VALUES"
+				+ "(null, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 		try {
 
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
 			preparedStatement.setString(1, usuario.getNome());
-			preparedStatement.setString(2, usuario.getCpf());
-			preparedStatement.setString(3, usuario.getSexo());
-			preparedStatement.setString(4, usuario.getDataNascimento());
-			preparedStatement.setString(5, usuario.getTelefone());
-			preparedStatement.setString(6, usuario.getEmail());
-			preparedStatement.setString(7, usuario.getSenha());
+			preparedStatement.setString(2, usuario.getSobrenome());
+			preparedStatement.setString(3, usuario.getCpf());
+			preparedStatement.setString(4, usuario.getSexo());
+			preparedStatement.setString(5, usuario.getDataNascimento());
+			preparedStatement.setString(6, usuario.getTelefone());
+			preparedStatement.setString(7, usuario.getEmail());
+			preparedStatement.setString(8, usuario.getSenha());
 
 			preparedStatement.executeUpdate();
 
@@ -62,7 +63,7 @@ public class UsuarioDAO {
 
 	public static List<Usuario> pesquisar(String pesquisa) {
 
-		sql = String.format("SELECT * FROM usuario WHERE nome LIKE '%s%%' ", pesquisa);
+		sql = String.format("SELECT * FROM usuario WHERE nome LIKE '%s%%' OR sobrenome LIKE '%s%%'", pesquisa, pesquisa);
 
 		List<Usuario> usuarios = new ArrayList<Usuario>();
 
@@ -76,6 +77,7 @@ public class UsuarioDAO {
 				Usuario usuario = new Usuario();
 				usuario.setIdUsuario(resultSet.getInt("idUsuario"));
 				usuario.setNome(resultSet.getString("nome"));
+				usuario.setSobrenome(resultSet.getString("sobrenome"));
 				usuario.setCpf(resultSet.getString("cpf"));
 				usuario.setSexo(resultSet.getString("sexo"));
 				usuario.setDataNascimento(resultSet.getString("dataNascimento"));
@@ -115,6 +117,7 @@ public class UsuarioDAO {
 
 				usuario.setIdUsuario(resultSet.getInt("idUsuario"));
 				usuario.setNome(resultSet.getString("nome"));
+				usuario.setSobrenome(resultSet.getString("sobrenome"));
 				usuario.setCpf(resultSet.getString("cpf"));
 				usuario.setSexo(resultSet.getString("sexo"));
 				usuario.setDataNascimento(resultSet.getString("dataNascimento"));
@@ -139,20 +142,21 @@ public class UsuarioDAO {
 
 	public static void atualizar(Usuario usuario) {
 
-		sql = "UPDATE usuario SET nome=?, cpf=?, sexo=?, dataNascimento=?, telefone=?, email=?, senha=? WHERE idUsuario=?";
+		sql = "UPDATE usuario SET nome=?, sobrenome=?, cpf=?, sexo=?, dataNascimento=?, telefone=?, email=?, senha=? WHERE idUsuario=?";
 
 		try {
 
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
 			preparedStatement.setString(1, usuario.getNome());
-			preparedStatement.setString(2, usuario.getCpf());
-			preparedStatement.setString(3, usuario.getSexo());
-			preparedStatement.setString(4, usuario.getDataNascimento());
-			preparedStatement.setString(5, usuario.getTelefone());
-			preparedStatement.setString(6, usuario.getEmail());
-			preparedStatement.setString(7, usuario.getSenha());
-			preparedStatement.setInt(8, usuario.getIdUsuario());
+			preparedStatement.setString(2, usuario.getSobrenome());
+			preparedStatement.setString(3, usuario.getCpf());
+			preparedStatement.setString(4, usuario.getSexo());
+			preparedStatement.setString(5, usuario.getDataNascimento());
+			preparedStatement.setString(6, usuario.getTelefone());
+			preparedStatement.setString(7, usuario.getEmail());
+			preparedStatement.setString(8, usuario.getSenha());
+			preparedStatement.setInt(9, usuario.getIdUsuario());
 
 			preparedStatement.executeUpdate();
 
@@ -181,6 +185,7 @@ public class UsuarioDAO {
 				Usuario usuario = new Usuario();
 				usuario.setIdUsuario(resultSet.getInt("idUsuario"));
 				usuario.setNome(resultSet.getString("nome"));
+				usuario.setSobrenome(resultSet.getString("sobrenome"));
 				usuario.setCpf(resultSet.getString("cpf"));
 				usuario.setSexo(resultSet.getString("sexo"));
 				usuario.setDataNascimento(resultSet.getString("dataNascimento"));
@@ -206,7 +211,7 @@ public class UsuarioDAO {
 	
 	public static List<Viaja> viagensUsuario(int idUsuario) {
 		
-		sql = String.format("SELECT * FROM viaja WHERE fk_usuarios_idUsuario=%s", idUsuario);
+		sql = String.format("SELECT * FROM viaja WHERE fk_usuario_idUsuario=%s", idUsuario);
 		
 		List<Viaja> viagens = new ArrayList<Viaja>();
 		
@@ -226,6 +231,7 @@ public class UsuarioDAO {
 				viaja.setDataPartida(resultSet.getString("dataPartida"));
 				viaja.setDataRetorno(resultSet.getString("dataRetorno"));
 				viaja.setTransporte(resultSet.getString("transporte"));
+				viaja.setDestinoU(resultSet.getString("destino"));
 				
 				viagens.add(viaja);
 				

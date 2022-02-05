@@ -6,6 +6,7 @@ public class Usuario {
 
 	private int idUsuario;
 	private String nome;
+	private String sobrenome;
 	private String cpf;
 	private String sexo;
 	private String dataNascimento;
@@ -29,6 +30,14 @@ public class Usuario {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public String getSobrenome() {
+		return sobrenome;
+	}
+
+	public void setSobrenome(String sobrenome) {
+		this.sobrenome = sobrenome;
 	}
 
 	public String getCpf() {

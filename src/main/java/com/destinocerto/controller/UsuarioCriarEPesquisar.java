@@ -42,6 +42,7 @@ public class UsuarioCriarEPesquisar extends HttpServlet {
 		Usuario usuario = new Usuario();
 		
 		usuario.setNome(request.getParameter("nome"));
+		usuario.setSobrenome(request.getParameter("sobrenome"));
 		usuario.setCpf(request.getParameter("cpf"));
 		usuario.setSexo(request.getParameter("sexo"));
 		usuario.setDataNascimento(request.getParameter("dtNascimento"));

@@ -6,6 +6,7 @@ public class Viaja {
 	private String dataPartida;
 	private String dataRetorno;
 	private String transporte;
+	private String destinoU;
 	
 	private Usuario usuario;
 	private Destino destino;
@@ -45,6 +46,12 @@ public class Viaja {
 	}
 	public void setDestino(Destino destino) {
 		this.destino = destino;
+	}
+	public String getDestinoU() {
+		return destinoU;
+	}
+	public void setDestinoU(String destinoU) {
+		this.destinoU = destinoU;
 	}
 	
 	

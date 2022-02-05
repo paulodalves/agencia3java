@@ -38,6 +38,7 @@ public class UsuarioConsultaAtualiza extends HttpServlet {
 
 		usuario.setIdUsuario(Integer.parseInt(request.getParameter("id")));
 		usuario.setNome(request.getParameter("nome"));
+		usuario.setSobrenome(request.getParameter("sobrenome"));
 		usuario.setCpf(request.getParameter("cpf"));
 		usuario.setSexo(request.getParameter("sexo"));
 		usuario.setDataNascimento(request.getParameter("dtNascimento"));

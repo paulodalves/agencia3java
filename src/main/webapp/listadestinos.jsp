@@ -10,6 +10,7 @@
 	rel="stylesheet"
 	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
 	crossorigin="anonymous">
+	<link href="style.css" rel="stylesheet">
 <title>Insert title here</title>
 </head>
 <body>
@@ -24,33 +25,21 @@
 		      	</form>
 				<h1>Destinos</h1>
 
-				<table>
-					<thead>
-						<tr>
-							<th>ID</th>
-							<th>Descricao</th>
-							<th>Valor</th>
-							
-						</tr>
-					</thead>
-					<tbody>
+				<section>
 						<c:forEach items="${destinos}" var="destino">
-							<tr>
-								<td>${destino.idDestino}</td>
-								<td>${destino.descricao}</td>
-								<td>${destino.valor}</td>
-								<td>
-									<a href="DConsultar?idDestino=${destino.idDestino}">Consultar</a>
-									<a href="DAtualizar?idDestino=${destino.idDestino}">Atualizar</a>
-									<a href="DApagar?idDestino=${destino.idDestino}">Apagar</a>
-								</td>
-								
-							</tr>
+							<div>
+								<div>
+									<p class="esconder-id">${destino.idDestino}</p>
+									
+									<p>${destino.descricao}</p>
+									<p>${destino.valor}<p>
+								</div>
+								<div>
+									<a href="DConsultar?idDestino=${destino.idDestino}">Detalhes</a>
+								</div>
+							</div>
 						</c:forEach>
-					</tbody>
-
-				</table>
-
+					</section>
 			</div>
 		</div>
 	</div>

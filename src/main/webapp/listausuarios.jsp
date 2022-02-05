@@ -10,6 +10,7 @@
 	rel="stylesheet"
 	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
 	crossorigin="anonymous">
+<link href="style.css" rel="stylesheet">
 <title>Insert title here</title>
 </head>
 <body>
@@ -24,42 +25,22 @@
 		      	</form>
 				<h1>Usuários</h1>
 
-				<table>
-					<thead>
-						<tr>
-							<th>ID</th>
-							<th>Nome</th>
-							<th>CPF</th>
-							<th>Gênero</th>
-							<th>Data Nascimento</th>
-							<th>Telefone</th>
-							<th>E-mail</th>
-							<th>Senha</th>
-						</tr>
-					</thead>
-					<tbody>
+				<section>
+					
 						<c:forEach items="${usuarios}" var="usuario">
-							<tr>
-								<td>${usuario.idUsuario}</td>
-								<td>${usuario.nome}</td>
-								<td>${usuario.cpf}</td>
-								<td>${usuario.sexo}</td>
-								<td>${usuario.dataNascimento}</td>
-								<td>${usuario.telefone}</td>
-								<td>${usuario.email}</td>
-								<td>${usuario.senha}</td>
-								<td>
-									<a href="UConsultar?idUsuario=${usuario.idUsuario}">Consultar</a>
-									<a href="UAtualizar?idUsuario=${usuario.idUsuario}">Atualizar</a>
-									<a href="UApagar?idUsuario=${usuario.idUsuario}">Apagar</a>
-									<!-- <a href="VConsultar?idUsuario=${usuario.idUsuario}">Viagem</a> -->
-								</td>
-								
-							</tr>
+							<div>
+								<div>
+									<p class="esconder-id">${usuario.idUsuario}</p>
+									
+									<p>${usuario.nome} ${usuario.sobrenome }</p>
+									<p>${usuario.email}<p>
+								</div>
+								<div>
+									<a href="UConsultar?idUsuario=${usuario.idUsuario}">Detalhes</a>
+								</div>
+							</div>
 						</c:forEach>
-					</tbody>
-
-				</table>
+					</section>
 
 			</div>
 		</div>

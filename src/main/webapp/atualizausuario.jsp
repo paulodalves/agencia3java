@@ -11,7 +11,7 @@
 	rel="stylesheet"
 	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
 	crossorigin="anonymous">
-
+<link href="style.css" rel="stylesheet">
 <title>Insert title here</title>
 </head>
 <body>
@@ -29,7 +29,7 @@
 				<h1>Atualizar de Usuário</h1>
 				
 				<form action="UAtualizar" method="post">
-					<input type="text" value="${usuario.idUsuario}" name="id" style="display: none;"/>
+					<input class="esconder-id" type="text" value="${usuario.idUsuario}" name="id"/>
 					<label>Nome: </label>
 					<input value="${usuario.nome}" type="text" name="nome" maxlength="50" /> <br/>
 					<label>CPF: </label> 

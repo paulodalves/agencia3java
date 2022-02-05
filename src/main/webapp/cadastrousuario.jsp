@@ -24,15 +24,17 @@
 				
 				<form action="UCriarEPesquisar" method="post">
 					<label>Nome: </label> 
-					<input type="text" name="nome" maxlength="50" /> <br/>
+					<input type="text" name="nome" maxlength="15" /> <br/>
+					<label>Sobrenome: </label> 
+					<input type="text" name="sobrenome" maxlength="15" /> <br/>
 					<label>CPF: </label> 
 					<input type="text" name="cpf" maxlength="14" /> <br/>
 					<label>Sexo: </label>
 					<select name="sexo">
-						<option selected>-- Selecionar --</option>
-						<option value="M">Masculino</option>
-						<option value="F">Feminino</option>
-						<option value="">Outros</option>
+						<option value="Outros" selected>-- Selecionar --</option>
+						<option value="Masculino">Masculino</option>
+						<option value="Feminimo">Feminino</option>
+						<option value="Outros">Outros</option>
 					</select> <br/>
 					<label>Data de Nascimento: </label> 
 					<input type="date" name="dtNascimento" /> <br/> 
