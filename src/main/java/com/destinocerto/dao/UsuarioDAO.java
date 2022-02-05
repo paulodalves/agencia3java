@@ -10,6 +10,7 @@ import java.util.List;
 
 import com.destinocerto.data.MySQLConnection;
 import com.destinocerto.model.Usuario;
+import com.destinocerto.model.Viaja;
 
 public class UsuarioDAO {
 
@@ -168,6 +169,7 @@ public class UsuarioDAO {
 		sql = "SELECT * FROM usuario";
 
 		List<Usuario> usuarios = new ArrayList<Usuario>();
+		
 
 		try {
 
@@ -202,7 +204,46 @@ public class UsuarioDAO {
 		}
 	}
 	
-	
+	public static List<Viaja> viagensUsuario(int idUsuario) {
+		
+		sql = String.format("SELECT * FROM viaja WHERE fk_usuarios_idUsuario=%s", idUsuario);
+		
+		List<Viaja> viagens = new ArrayList<Viaja>();
+		
+		try {
+			
+			Statement statement = connection.createStatement();
+			
+			ResultSet resultSet = statement.executeQuery(sql);
+			
+			//Usuario usuario = new Usuario();
+			
+			while(resultSet.next()) {
+				
+				Viaja viaja = new Viaja();
+				
+				viaja.setIdViagem(resultSet.getInt("idViagem"));
+				viaja.setDataPartida(resultSet.getString("dataPartida"));
+				viaja.setDataRetorno(resultSet.getString("dataRetorno"));
+				viaja.setTransporte(resultSet.getString("transporte"));
+				
+				viagens.add(viaja);
+				
+				System.out.println(resultSet.getString("transporte"));
+			
+			}
+			
+			//usuario.setViagens(viagens);
+			System.out.println("Viagens capturadas!");
+			
+			return viagens;
+			
+		} catch (SQLException e) {
+			System.out.println("Viagens não capturadas." + e.getMessage());
+		}
+		
+		return null;
+	}
 
 
 }

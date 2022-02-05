@@ -51,6 +51,29 @@
 					<input type="password" value="${usuario.senha}" name="senha" maxlength="8" /><br />
 					<input type="submit" value="Cadastrar"/>
 				</form>
+				
+				<table>
+				
+					<thead>
+						<tr>
+							<th>id</th>
+							<th>Data de partida</th>
+							<th>Data de chegada</th>
+							<th>Transporte</th>
+						</tr>
+					</thead>
+					<tbody>
+					<c:forEach items="${viagens}" var="viaja">
+						<tr>
+							<td>${viaja.idViagem }</td>
+							<td>${viaja.dataPartida }</td>
+							<td>${viaja.dataRetorno }</td>
+							<td>${viaja.transporte }</td>
+						</tr>
+					</c:forEach>
+					</tbody>
+				
+				</table>
 			</div>
 		</div>
 	</div>
