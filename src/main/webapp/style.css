@@ -1,5 +1,39 @@
 @charset "ISO-8859-1";
-
+* {
+	padding: 0;
+	margin: 0;
+}
 .esconder-id {
 	display: none;
+}
+
+#campo-search {
+	margin-top: 25px;
+}
+
+#titulo-padding {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.btn-cadastro {
+	border:0;
+	background: #90CBFB;
+	width: 100px;
+	border-radius: 5px;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+main {
+	height: 500px;
+}
+
+footer {
+	background: #110066;
+}
+
+nav {
+	background: #FFD432;
 }
