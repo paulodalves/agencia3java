@@ -15,9 +15,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<nav class="navbar navbar-expand-lg navbar-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="index.jsp">Navbar</a>
+    <a class="navbar-brand" href="index.jsp">Destino certo</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -76,10 +76,10 @@
 
 				<!-- Consulta por id -->
 
-				<h1>Detalhes do Destino</h1>
+				<h1 id="titulo-padding" class="display-4">Detalhes do Destino</h1>
 
-				<a href="DAtualizar?idDestino=${destino.idDestino}">Atualizar</a> 
-				<a href="DApagar?idDestino=${destino.idDestino}">Apagar</a>
+				<a class="btn btn-primary" href="DAtualizar?idDestino=${destino.idDestino}">Atualizar</a> 
+				<a class="btn btn-danger" href="DApagar?idDestino=${destino.idDestino}">Apagar</a>
 				<section>
 					<div>
 						<p class="esconder-id">

@@ -26,6 +26,7 @@
   margin-left: auto;
 }
 
+
 main {
 	height: 500px;
 }
@@ -35,5 +36,13 @@ footer {
 }
 
 nav {
-	background: #FFD432;
+	background: #FFD432';
+}
+
+body {
+	height: 100%;
+}
+
+img {
+	height: 100px;
 }
