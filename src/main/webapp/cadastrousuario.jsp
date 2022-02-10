@@ -12,6 +12,27 @@
 	crossorigin="anonymous">
 <link href="style.css" rel="stylesheet">
 <title>Insert title here</title>
+<script>
+	function mascaraCpf() {
+		let cpf = document.querySelector('#txtcpf')
+		
+		if (cpf.value.length === 3 || cpf.value.length === 7) {
+			cpf.value += "."
+		} else if (cpf.value.length === 11) {
+			cpf.value += "-"
+		}
+	}
+	
+	const mascaraTel = () => {
+		let tel = document.querySelector('#txttelefone')
+		
+		if (tel.value.length === 2) {
+			tel.value += " "
+		} else if (tel.value.length === 8 ) {
+			tel.value += "-"
+		}
+	}
+</script>
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light">
@@ -110,7 +131,7 @@
 
 					<div class="col-md-4">
 						<label class="form-label">CPF:</label> <input type="text"
-							class="form-control">
+							class="form-control" name="cpf" id="txtcpf" placeholder="Insira o CPF" autocomplete="off" maxlength="14" onkeyup="mascaraCpf()">
 					</div>
 					<div class="col-md-4">
 						<label for="inputState" class="form-label">Gênero</label> <select
@@ -127,7 +148,7 @@
 					</div>
 					<div class="col-md-4">
 						<label class="form-label">Telefone:</label> <input type="text"
-							name="telefone" class="form-control">
+							name="telefone" id="txttelefone" class="form-control" placeholder="Insira o telefone" autocomplete="off" maxlength="13" onkeyup="mascaraTel()">
 					</div>
 
 					<div class="col-md-4">
