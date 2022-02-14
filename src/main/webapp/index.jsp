@@ -102,7 +102,7 @@
 						data-bs-ride="carousel">
 						<div class="carousel-inner">
 							<div class="carousel-item active">
-								<img src="./imagens/1.jpg" class="d-block w-100" height="400px"
+								<img src="./imagens/1.jpg" class="d-block w-100" style="height: 400px"
 									!important alt="imagem 1">
 								<div class="carousel-caption d-none d-md-block">
 									<h5>Conheça montanhas</h5>
@@ -110,7 +110,7 @@
 								</div>
 							</div>
 							<div class="carousel-item">
-								<img src="./imagens/2.jpg" class="d-block w-100" height="400px"
+								<img src="./imagens/2.jpg" class="d-block w-100" style="height: 400px"
 									!important alt="imagem 2">
 									<div class="carousel-caption d-none d-md-block">
 									<h5>Conheça praias</h5>
@@ -118,7 +118,7 @@
 								</div>
 							</div>
 							<div class="carousel-item">
-								<img src="./imagens/3.jpg" class="d-block w-100" height="400px"
+								<img src="./imagens/3.jpg" class="d-block w-100" style="height: 400px"
 									!important alt="imagem 3">
 									<div class="carousel-caption d-none d-md-block">
 									<h5>Conheça cidades</h5>
@@ -142,16 +142,19 @@
 			</div>
 		</div>
 	</div>
+
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+		crossorigin="anonymous"></script>
+		
 	<footer class="py-3 my-4">
 		<ul class="nav justify-content-center border-bottom pb-3 mb-3">
 			<li class="nav-item"><a class="nav-link px-2 text-muted">Home</a>
 		</ul>
 		<p class="text-center text-muted">&copy; 2022 Destino Certo, LTDA</p>
 	</footer>
-
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-		crossorigin="anonymous"></script>
+		
 </body>
 </html>

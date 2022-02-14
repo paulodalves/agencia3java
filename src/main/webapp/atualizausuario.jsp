@@ -13,7 +13,7 @@
 	crossorigin="anonymous">
 <link href="style.css" rel="stylesheet">
 <link href="style.css" rel="stylesheet">
-<title>Insert title here</title>
+<title>Atualizar</title>
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light">
